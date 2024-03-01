@@ -10,6 +10,9 @@ public class Users {
     public String userid;
     public String lastmsg;
 
+    public Users() {
+    }
+
     public Users(String name, String email, String password) {
         this.name = name;
         this.email = email;

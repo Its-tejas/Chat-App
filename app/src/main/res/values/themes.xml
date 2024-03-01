@@ -6,7 +6,10 @@
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
     </style>
 
-    <style name="No.Theme.ChatApp" parent="Theme.AppCompat.Light.NoActionBar"/>
+    <style name="No.Theme.ChatApp" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 
 
     <style name="Theme.ChatApp" parent="Base.Theme.ChatApp" />
