@@ -43,8 +43,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position)
     {
         Users users = list.get(position);
-//        holder.imageView.setImageResource(list.get(position).img);
-        Picasso.get().load(users.img).into(holder.imageView);
+//        holder.imageView.setImageResource(list.get(position).profilepic);
+        Picasso.get().load(users.profilepic).into(holder.imageView);
         holder.textname.setText(users.name);
         holder.textmsg.setText(users.lastmsg);
 
@@ -74,7 +74,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         {
             super(itemView);
 
-            imageView =itemView.findViewById(R.id.img);
+            imageView =itemView.findViewById(R.id.profilepic);
             textname =itemView.findViewById(R.id.txtname);
             textmsg =itemView.findViewById(R.id.txtlastmsg);
             linearTap = itemView.findViewById(R.id.linearTap);

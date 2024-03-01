@@ -18,31 +18,36 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mydroid.chatapp.Adapter.RecyclerAdapter;
 import com.mydroid.chatapp.Models.Users;
+import com.mydroid.chatapp.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+//    RecyclerView recyclerview;
     ArrayList<Users> list;
     FirebaseDatabase database;
     RecyclerAdapter adapter;
     FirebaseAuth mAuth;
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        recyclerView = findViewById(R.id.recyclerview);
+//        recyclerview = findViewById(R.id.recyclerview);
 
         database = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
         list = new ArrayList<>();
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new RecyclerAdapter(MainActivity.this,list);
+        binding.recyclerview.setAdapter(adapter);
 
+        binding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
 
         database.getReference().child("Users").addValueEventListener(new ValueEventListener() {
             @Override
@@ -66,9 +71,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        adapter = new RecyclerAdapter(MainActivity.this,list);
-        recyclerView.setAdapter(adapter);
-
+//        return binding.getRoot();
     }
 
     @Override
@@ -83,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
     {
         if (item.getItemId() == R.id.logout)
         {
+            Toast.makeText(this, "Signing out", Toast.LENGTH_SHORT).show();
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(MainActivity.this,LoginActivity.class);
             startActivity(intent);

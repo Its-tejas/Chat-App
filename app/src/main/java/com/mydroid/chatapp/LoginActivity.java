@@ -63,7 +63,17 @@ public class LoginActivity extends AppCompatActivity
                                 public void onComplete(@NonNull Task<AuthResult> task)
                                 {
                                     progressDialog.dismiss();
-                                    if (task.isSuccessful()) {
+                                    if (task.isSuccessful())
+                                    {
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        Users users = new Users();
+
+                                        users.setUserid(user.getUid());
+                                        users.setEmail(user.getEmail());
+                                        users.setName(user.getDisplayName());
+                                        users.setProfilepic(user.getPhotoUrl().toString());
+
+                                        mdatabase.getReference().child("Users").child(user.getUid().toString()).setValue(users);
 
                                         Intent intent = new Intent(LoginActivity.this , MainActivity.class);
                                         startActivity(intent);
