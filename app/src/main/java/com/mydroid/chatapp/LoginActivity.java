@@ -68,12 +68,12 @@ public class LoginActivity extends AppCompatActivity
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         Users users = new Users();
 
-                                        users.setUserid(user.getUid());
+//                                        users.setUserid(user.getUid());
                                         users.setEmail(user.getEmail());
-                                        users.setName(user.getDisplayName());
-                                        users.setProfilepic(user.getPhotoUrl().toString());
+//                                        users.setName(user.getDisplayName());
+//                                        users.setProfilepic(user.getPhotoUrl().toString());
 
-                                        mdatabase.getReference().child("Users").child(user.getUid().toString()).setValue(users);
+                                        mdatabase.getReference().child("Users").child(user.getUid().toString());
 
                                         Intent intent = new Intent(LoginActivity.this , MainActivity.class);
                                         startActivity(intent);
