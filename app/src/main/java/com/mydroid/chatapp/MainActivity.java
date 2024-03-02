@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        return binding.getRoot();
     }
 
     @Override
@@ -92,6 +91,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             onBackPressed();
         }
+        if (item.getItemId() == R.id.menuProfile)
+        {
+            Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+            intent.putExtra("name","ok");
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -101,4 +106,9 @@ public class MainActivity extends AppCompatActivity {
         finishAffinity();
     }
 
+    @Override
+    protected void onResume() {
+//        maitain flag
+        super.onResume();
+    }
 }

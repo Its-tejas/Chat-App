@@ -15,6 +15,9 @@
         android:theme="@style/Theme.ChatApp"
         tools:targetApi="31">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/No.Theme.ChatApp">
@@ -24,26 +27,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ChatActivity"
             android:exported="true" />
-
         <activity
             android:name=".SignUpActivity"
             android:exported="true"
             android:theme="@style/No.Theme.ChatApp" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:theme="@style/No.Theme.ChatApp"/>
-
-
+            android:theme="@style/No.Theme.ChatApp" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>

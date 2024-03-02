@@ -3,6 +3,15 @@ package com.mydroid.chatapp.Models;
 public class Users {
     public String profilepic, name, email, password, userid, lastmsg;
 
+    public int img;
+
+    public Users( int img, String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.img = img;
+    }
+
     public Users() {
     }
 
@@ -13,6 +22,13 @@ public class Users {
         this.password = password;
         this.userid = userid;
         this.lastmsg = lastmsg;
+    }
+
+    public Users(String profilepic, String name, String email, String password) {
+        this.profilepic = profilepic;
+        this.name = name;
+        this.email = email;
+        this.password = password;
     }
 
     public Users(String name, String email, String password) {

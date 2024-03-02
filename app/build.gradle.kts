@@ -46,6 +46,7 @@ dependencies {
     implementation("com.google.firebase:firebase-database")
 
     implementation("com.squareup.picasso:picasso:2.8")
+    implementation("androidx.activity:activity:1.8.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

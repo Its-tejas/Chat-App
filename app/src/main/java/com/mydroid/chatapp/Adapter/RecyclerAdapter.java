@@ -44,7 +44,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     {
         Users users = list.get(position);
 //        holder.imageView.setImageResource(list.get(position).profilepic);
-        Picasso.get().load(users.profilepic).into(holder.imageView);
+//        Picasso.get().load(users.profilepic).into(holder.imageView);
         holder.textname.setText(users.name);
         holder.textmsg.setText(users.lastmsg);
 
@@ -52,6 +52,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ChatActivity.class);
+                intent.putExtra("UserId", users.userid);
+                intent.putExtra("UserName", users.name);
+                intent.putExtra("UserProfilePic", users.profilepic);
                 context.startActivity(intent);
             }
         });
