@@ -1,31 +1,25 @@
 package com.mydroid.chatapp.Models;
 
 public class Users {
-    public String profilepic, name, email, password, userid, lastmsg;
+    public String profilePic, name, email, password, userid, lastmsg, about;
 
-    public int img;
 
-    public Users( int img, String name, String email, String password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.img = img;
-    }
 
     public Users() {
     }
 
-    public Users(String profilepic, String name, String email, String password, String userid, String lastmsg) {
-        this.profilepic = profilepic;
+    public Users(String profilePic, String name, String email, String password, String userid, String lastmsg, String about) {
+        this.profilePic = profilePic;
         this.name = name;
         this.email = email;
         this.password = password;
         this.userid = userid;
         this.lastmsg = lastmsg;
+        this.about = about;
     }
 
-    public Users(String profilepic, String name, String email, String password) {
-        this.profilepic = profilepic;
+    public Users(String profilePic, String name, String email, String password) {
+        this.profilePic = profilePic;
         this.name = name;
         this.email = email;
         this.password = password;
@@ -37,12 +31,20 @@ public class Users {
         this.password = password;
     }
 
-    public String getProfilepic() {
-        return profilepic;
+    public String getProfilePic() {
+        return profilePic;
     }
 
-    public void setProfilepic(String profilepic) {
-        this.profilepic = profilepic;
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
     }
 
     public String getName() {

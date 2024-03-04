@@ -17,7 +17,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.mydroid.chatapp.Models.MessageModel;
 import com.mydroid.chatapp.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 // Adapter class for the RecyclerView in the chat activity
 public class ChatAdapter extends RecyclerView.Adapter {
@@ -111,8 +113,23 @@ public class ChatAdapter extends RecyclerView.Adapter {
         // Bind message data to view holders based on their type
         if (holder.getClass() == SenderViewHolder.class) {
             ((SenderViewHolder) holder).senderMsg.setText(messageModel.getMessage()); // Set sender message text
+
+            Date date = new Date(messageModel.getTimestamp());
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm a");
+            String strDate = simpleDateFormat.format(date);
+
+            ((SenderViewHolder)holder).senderTime.setText(strDate.toString());
+
+
         } else {
             ((ReceiverViewHolder) holder).receiverMsg.setText(messageModel.getMessage()); // Set receiver message text
+
+            Date date2 = new Date(messageModel.getTimestamp());
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm a");
+            String strDate = simpleDateFormat.format(date2);
+
+            ((ReceiverViewHolder)holder).receiverTime.setText(strDate.toString());
+
         }
     }
 

@@ -3,7 +3,6 @@ package com.mydroid.chatapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +23,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-//    RecyclerView recyclerview;
     ArrayList<Users> list;
     FirebaseDatabase database;
     RecyclerAdapter adapter;
@@ -36,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-//        recyclerview = findViewById(R.id.recyclerview);
 
         database = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -70,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, error.toString() , Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     @Override
@@ -93,8 +88,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (item.getItemId() == R.id.menuProfile)
         {
-            Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
-            intent.putExtra("name","ok");
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
