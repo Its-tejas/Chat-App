@@ -21,13 +21,12 @@
             android:id="@+id/linearTap"
             android:padding="11dp">
 
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:padding="5dp"
                 android:id="@+id/profilePic"
-                android:background="#FAF09C"
-                android:src="@drawable/person_boy_svgrepo_com"/>
+                android:src="@drawable/person"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

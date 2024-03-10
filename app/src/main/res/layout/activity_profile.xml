@@ -32,7 +32,7 @@
             android:layout_height="120dp"
             android:id="@+id/profileimage"
             android:layout_margin="10dp"
-            android:src="@drawable/person_holding_a_glass"
+            android:src="@drawable/person"
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp"/>
 

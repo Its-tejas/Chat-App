@@ -3,6 +3,7 @@ package com.mydroid.chatapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.viewbinding.ViewBindings;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -54,7 +54,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Users users = snapshot.getValue(Users.class);
-                Picasso.get().load(users.getProfilePic()).placeholder(R.drawable.person_holding_a_glass).into(binding.profileimage);
+                Picasso.get().load(users.getProfilePic()).placeholder(R.drawable.person).into(binding.profileimage);
 
                 binding.txtname.setText(users.getName());
                 binding.txtabout.setText(users.getAbout());

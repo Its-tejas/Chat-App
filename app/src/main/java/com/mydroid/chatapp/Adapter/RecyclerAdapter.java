@@ -47,9 +47,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position)
     {
+//        int a = R.drawable.person;
         Users users = list.get(position);
 //        holder.imageView.setImageResource(list.get(position).profilePic);
-        Picasso.get().load(users.profilePic).placeholder(R.drawable.person_holding_a_glass).into(holder.imageView);
+        Picasso.get().load(users.profilePic).placeholder(R.drawable.person).into(holder.imageView);
         holder.textname.setText(users.name);
 // To set last msg
         FirebaseDatabase.getInstance().getReference().child("Chats")
