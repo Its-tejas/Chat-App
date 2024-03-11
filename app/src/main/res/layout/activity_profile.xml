@@ -66,6 +66,7 @@
                 android:id="@+id/txtname"
                 android:layout_marginTop="5dp"
                 android:hint="Enter your name"
+                android:textColor="@color/white"
                 android:textColorHint="#ABAAAA"
                 android:inputType="textPersonName"/>
 
@@ -91,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtabout"
                 android:layout_marginTop="5dp"
+                android:textColor="@color/white"
                 android:hint="Enter about yourself"
                 android:textColorHint="#ABAAAA"
                 android:inputType="textPersonName"/>
